@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户注册</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/base.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/sidenavigation.js"></script>
+</head>
+	<form action="/jobinfo/register" method="post">
+<body>
+     <div class="admin-top">
+          <h3>
+             <img src="../image/headerlogo.png">
+             <small>人才招聘管理系统后台</small> 
+          </h3>
+     </div>
+     <!-- 导航-->
+     <div class="wrap">
+         <!--main-->
+         <div class=" pull-left">
+              <!--注册-->
+              <div class="admin-manage">
+                   <img src="../image/tmp/img3.png">
+                   <div class="admin-login"> <h2><b><center>用户注册</center></b></h2>
+                   <p><input type="hidden" class="input-text" name="admin.id"></p>
+                        <p><span>用户名：</span><input type="text" class="input-text" name="admin.name"></p>
+                        <p><span>密码：</span><input type="password" class="input-text" name="admin.password"></p>
+                        <p><button class="btn login-btn" type="submit">注册</button></p>
+                        <p><a href="/"><button class="btn login-btn" type="button">取消 </button></a></p>
+                   </div>
+                   <div class="clear"></div>
+               </div>
+         </div>
+    </div>
+</body>
+</form>
+</html>

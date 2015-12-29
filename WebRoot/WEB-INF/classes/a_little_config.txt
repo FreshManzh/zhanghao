@@ -1,0 +1,4 @@
+jdbcUrl = jdbc:mysql://192.168.1.30/zgyy_intern?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = intern
+password =intern
+devMode = true

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新增招聘信息</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/base.css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/sidenavigation.js"></script>
+</head>
+<body>
+	<form action="/jobinfo/update" method="post">
+		<div class="admin-top">
+			<h3>
+				<img src="/image/headerlogo.png"> <small>人才招聘管理系统后台</small> <a
+					href="/" class="out pull-right">退出</a> <a href="#"
+					class="user pull-right">${(admin.name)!},您好！</a>
+			</h3>
+		</div>
+		<!-- 导航-->
+		<div class="conent">
+			<!--侧边导航-->
+			<div class="side pull-left">
+				<div id="firstpane" class="menu_list">
+					<p class="menu_head current">
+						<a href="JavaScript:;"><span>招聘信息管理</span><em></em></a>
+					</p>
+					<div class="menu_body ">
+						 <a href="/jobinfo/" class="submenu" >招聘信息管理</a>
+                        <a href="/jobinfo/job_info_insert" class="submenu" >新增招聘信息</a>
+                        <a href="/jobinfo/detail"  class="submenu" >招聘信息详情</a>
+					</div>
+
+					<p class="menu_head">
+						<a href="JavaScript:;"><span>简历模板管理</span><em></em></a>
+					</p>
+					<div class="menu_body">
+						<a href="#" class="submenu">简历模板管理</a> <a href="#" class="submenu">硕士模板</a>
+						<a href="#" class="submenu">本科/大专模板</a> <a href="#"
+							class="submenu">硕士模板预览</a> <a href="#" class="submenu">本科/大专模板预览</a>
+						<a href="#" class="submenu">新增扩展项</a>
+					</div>
+
+					<p class="menu_head">
+						<a href="JavaScript:;"><span>求职管理</span><em></em></a>
+					</p>
+					<div class="menu_body">
+						<a href="#" class="submenu">求职管理</a> <a href="#" class="submenu">求职简历</a>
+					</div>
+					<p class="menu_head">
+						<a href="#"><span>通知公告</span><em></em></a>
+					</p>
+					<p class="menu_head">
+						<a href="#"><span>用户管理</span><em></em></a>
+					</p>
+				</div>
+			</div>
+			<!--main-->
+			<div class="main pull-left">
+				<div class="title">
+					<h5>修改招聘信息</h5>
+				</div>
+				<!-- 新增招聘信息-->
+				<div class="add-info">
+					<table class="add-form">
+						<tr>
+							<th>招聘岗位：</th>
+							<td><input type="text" class="input-text"
+								value="${(jobinfo.office)!}" name="jobinfo.office"><em>*</em>
+								
+								<!-- 插入隐藏域 -->
+								<input type="hidden" name="jobinfo.id" value="${(jobinfo.id)!}" />
+								<input type="hidden" name="jobinfo.releaseDate" /></td>
+								
+							<th>招聘人数：</th>
+							<td><input type="text" class="input-text"
+								value="${(jobinfo.needCount)!}" name="jobinfo.needCount"><em>*</em></td>
+						</tr>
+						<tr>
+							<th>学 历：</th>
+							<td><select class="select" name="jobinfo.degree">
+									<option>硕士</option>
+									<option>本科</option>
+									<option>大专</option>
+							</select><em>*</em></td>
+							<th>科 室：</th>
+							<td><input type="text" class="input-text"
+								value="${(jobinfo.department)!}" name="jobinfo.department"><em></em></td>
+						</tr>
+						<tr>
+							<th>月 薪：</th>
+							<td><input type="text" class="input-text"
+								value="${(jobinfo.salary)!}" name="jobinfo.salary"> 元<em>0表示面议</em></td>
+							<th>有效日期：</th>
+							<td><input type="text" class="input-text"
+								value="${(jobinfo.validDate)!}" name="jobinfo.validDate"><em>*</em></td>
+						</tr>
+						<tr>
+							<th>模 板：</th>
+							<td><select class="select">
+									<option>硕士模板</option>
+									<option>本科/大专模板</option>
+							</select><a href="#" class="btn btn-primary">预览</a></td>
+							<th></th>
+							<td></td>
+						</tr>
+						<tr>
+							<th>招聘说明：</th>
+							<td colspan="3"><textarea class="area"
+									name="jobinfo.description">${(jobinfo.description)!}
+                             </textarea><em></em></td>
+						</tr>
+						<tr>
+							<th></th>
+							<td colspan="3"><div class="btn-group">
+									<button type="submit" class="btn">修改</button>
+									<a href="/jobinfo"><button type="button"
+											class="btn btn-default">取消</button></a>
+
+								</div></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
